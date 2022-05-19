@@ -1,0 +1,6 @@
+rootProject.name = 'gift-certificate-system'
+include 'persistence'
+include 'model'
+include 'service'
+include 'web'
+

@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+}
+
+group 'persistence'
+version '1.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+
+    /*
+    This dependency – spring-context – defines the actual Spring Injection Container
+    and has a small number of dependencies: spring-core, spring-expression, spring-aop,
+    and spring-beans. These augment the container by enabling support for some of the core
+    Spring technologies: the Core Spring utilities, the Spring Expression Language (SpEL),
+    the Aspect-Oriented Programming support and the JavaBeans mechanism.
+     */
+    implementation 'org.springframework:spring-context:5.3.19'
+    // for using JdbcTemplate in order to access data
+    implementation 'org.springframework:spring-jdbc:5.3.19'
+    // for using postgres database
+    implementation 'org.postgresql:postgresql:42.3.5'
+
+    implementation 'commons-dbcp:commons-dbcp:20030825.184428'
+
+    testImplementation 'org.springframework:spring-test:5.3.20'
+
+
+    implementation project(':model')
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+}
+
+test {
+    useJUnitPlatform()
+}

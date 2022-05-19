@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+war{
+    archiveName = 'start.war'
+}
+
+group 'web'
+version '1.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    // for using REST Web Services implementation for web applications
+    implementation 'org.springframework:spring-webmvc:5.3.19'
+    // for using converting to json format from obj also send and receive as json
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2.2'
+    implementation 'javax.servlet:servlet-api:2.5'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    implementation project(':service')
+    implementation project(':persistence')
+    implementation project(':model')
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
