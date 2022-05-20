@@ -53,7 +53,7 @@ public class GiftCertificateRepositoryTest {
         return list;
     }
     @Test
-    public void list()throws MyDtoException, InterruptedException{
+    public void listTest()throws MyDtoException, InterruptedException{
         List<GiftCertificateDto> actual=repository.list().stream()
                 .map(certificate -> (new GiftCertificateDto().apply(certificate)))
                 .collect(Collectors.toList());

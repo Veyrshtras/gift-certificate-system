@@ -56,6 +56,8 @@ public class TagServiceTest {
                 .map(tag -> new TagDto().apply(tag))
                 .collect(Collectors.toList());
 
+        // TODO: 20.05.2022 create, update, delete tests 
+        
         Assertions.assertEquals(actual,list());
     }
 }

@@ -54,7 +54,7 @@ public class GiftCertificateServiceTest {
         return list;
     }
     @Test
-    public void list()throws MyDtoException, InterruptedException{
+    public void listTest()throws MyDtoException, InterruptedException{
         List<GiftCertificateDto> actual=service.getAll().stream()
                 .map(certificate -> (new GiftCertificateDto().apply(certificate)))
                 .collect(Collectors.toList());
